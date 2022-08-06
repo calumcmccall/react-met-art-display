@@ -46,9 +46,11 @@ const ArtworksContainer = () => {
     return (
         <>
             <button onClick={aTest}>Test</button>
-            <img src="https://images.metmuseum.org/CRDImages/ep/web-large/DT285189.jpg"/>
+            {/* <img src="https://images.metmuseum.org/CRDImages/ep/web-large/DT285189.jpg"/> */}
             <ArtworkSelector artworks={artworks} onArtworkSelected={handleArtworkSelected} />
             <Artwork artwork={selectedArtwork} selectedData={selectedData} />
+            <p>{selectedData.artistDisplayName}</p>
+            <img src={selectedData.primaryImageSmall}/>
         </>
     )
 }

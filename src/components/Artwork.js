@@ -2,14 +2,15 @@ import ArtworkList from "./ArtworkList"
 
 const Artwork = ({artwork}, {selectedData}) => {
 
-    if (!artwork) {
+    if (!artwork || !selectedData) {
         return null
     }
 
     return (
         <>
             <p>{artwork}</p>
-            {/* <img src={selectedData.primaryImage} /> */}
+            <p>{selectedData}</p>
+            {/* {console.log(selectedData)} */}
         </>
     )
 
