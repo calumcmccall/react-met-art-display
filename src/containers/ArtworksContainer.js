@@ -1,5 +1,4 @@
 import { useEffect, useState } from "react"
-import ArtworkList from "../components/ArtworkList"
 import Artwork from "../components/Artwork"
 import ArtworkSelector from "../components/ArtworkSelector"
 
@@ -35,21 +34,18 @@ const ArtworksContainer = () => {
             .then(selectedArt => setSelectedData(selectedArt))
     }
 
-    const aTest = () => {
-        console.log(artworks);
-    }
-
     const handleArtworkSelected = artwork => {
         setSelectedArtwork(artwork)
     }
 
     return (
         <>
-            <button onClick={aTest}>Test</button>
             {/* <img src="https://images.metmuseum.org/CRDImages/ep/web-large/DT285189.jpg"/> */}
             <ArtworkSelector artworks={artworks} onArtworkSelected={handleArtworkSelected} />
-            <Artwork artwork={selectedArtwork} selectedData={selectedData} />
+            {/* <Artwork artwork={selectedArtwork} selectedData={selectedData} /> */}
             <p>{selectedData.artistDisplayName}</p>
+            <p>{selectedData.title}</p>
+            <p>{selectedData.period}</p>
             <img src={selectedData.primaryImageSmall}/>
         </>
     )
